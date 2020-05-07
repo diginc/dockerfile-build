@@ -12,7 +12,7 @@ REPOS = [
 
 
 def main():
-    for repo, repo_build_url in REPOS:
+    for repo in REPOS:
         build_url_key = repo.replace('/', '_').replace('-', '_')
         if environ.get(build_url_key) is not None:
             requests.post(environ.get(build_url_key))
